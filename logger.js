@@ -60,7 +60,7 @@ const data = createLogger({
 	exitOnError: false,
 	transports: [
 		new transports.File({
-			filename: './src/logs/data.log',
+			filename: './data.log',
 			level: 'data'
 		})
 	]
