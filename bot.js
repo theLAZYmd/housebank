@@ -1,4 +1,6 @@
+require('dotenv').config();
 const Discord = require('discord.js');
+
 const client = new Discord.Client();
 const Logger = require('./logger');
 const Trivia = require('./trivia');
@@ -40,4 +42,4 @@ client.on('message', (message) => {
 	if (message.author.bot) Trivia.run(message);
 });
 
-client.login(process.env.TOKEN ? process.env.TOKEN : require('./token.json').token); //token
+client.login(process.env.TOKEN); //token
