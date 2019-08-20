@@ -2,7 +2,7 @@
     "name": "housebankbot",
     "description": "User housebank#5970",
     "main": "housebank.js",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node bot.js"
