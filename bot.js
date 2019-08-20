@@ -4,16 +4,17 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const Logger = require('./logger');
 const Trivia = require('./trivia');
-const ids = [
-	'338772451565502474',
-	'422847086145568769',
-	'363519664875372556',
-	'365177031224459264',
-	'303609777756438529',
-	'373480715276517376',
-	'330193848137678848',
-	'333586342275710978'
-];
+const ids = {
+	'338772451565502474': true,
+	'422847086145568769': true,
+	'363519664875372556': true,
+	'365177031224459264': true,
+	'303609777756438529': true,
+	'373480715276517376': true,
+	'330193848137678848': true,
+	'333586342275710978': true,
+	'185412969130229760': false
+};
 
 let bouncerbot, nadekobot, reboot;
 
@@ -37,7 +38,7 @@ client.on('message', (message) => {
 	try {
 		if (message.author.id === client.user.id) return;
 		if (message.channel.type === 'dm' || message.channel.type === 'group')  return;
-		if (ids.includes(message.author.id)) {
+		if (ids[message.author.id]) {
 			if (message.content.startsWith('.award') || message.content.startsWith('.take')) {
 				message.channel.send(message.content);
 				message.delete();
